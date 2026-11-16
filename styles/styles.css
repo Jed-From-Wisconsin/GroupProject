@@ -177,3 +177,23 @@ h1 em { color: #d4bd91; font-weight: 400; }
     html { scroll-behavior: auto; }
     *, *::before, *::after { transition-duration: .01ms !important; }
 }
+.registration-form fieldset {
+    margin: 18px 0;
+    padding: 18px;
+    border: 1px solid var(--line);
+}
+
+.registration-form legend {
+    padding: 0 8px;
+    color: var(--gold);
+    font-family: var(--serif);
+    font-size: 18px;
+}
+
+.registration-form fieldset label {
+    display: block;
+}
+
+.registration-form fieldset input[type="radio"] {
+    accent-color: var(--gold);
+}
