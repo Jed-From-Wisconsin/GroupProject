@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,34 +10,140 @@
 </head>
 <body>
     <header class="site-header">
-        <a class="brand" href="index.html" aria-label="Aurelia Motor Co. home"><span class="brand-mark" aria-hidden="true">A</span><span class="brand-name">Aurelia <span>Motor Co.</span></span></a>
+        <a class="brand" href="index.html" aria-label="Aurelia Motor Co. home">
+            <span class="brand-mark" aria-hidden="true">A</span>
+            <span class="brand-name">Aurelia <span>Motor Co.</span></span>
+        </a>
+
         <nav class="site-nav" aria-label="Main navigation">
-            <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a class="nav-cta active" aria-current="page" href="registration.html">Register</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a class="nav-cta active" aria-current="page" href="registration.html">Register</a>
         </nav>
     </header>
+
     <main>
         <section class="registration-layout section-wrap">
+
             <div class="registration-copy">
                 <p class="eyebrow">Your invitation</p>
+
                 <h1>Make it <em>personal.</em></h1>
-                <p class="lead">Register your interest and let us know what you are looking for. Our team will be in touch to help you take the next step.</p>
-                <div class="registration-note"><span aria-hidden="true">✦</span><p>A thoughtful introduction, a personal viewing, and guidance tailored to you. It starts here.</p></div>
-                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&amp;fit=crop&amp;w=1100&amp;q=80" alt="Low front three-quarter view of a sports car on a scenic road">
+
+                <p class="lead">
+                    Register your interest and let us know what you are looking for.
+                    Our team will be in touch to help you take the next step.
+                </p>
+
+                <div class="registration-note">
+                    <span aria-hidden="true">✦</span>
+                    <p>A thoughtful introduction, a personal viewing, and guidance tailored to you. It starts here.</p>
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&amp;fit=crop&amp;w=1100&amp;q=80"
+                     alt="Low front three-quarter view of a sports car on a scenic road">
             </div>
+
             <form class="contact-form registration-form" action="#" method="get">
+
                 <h2>Join the Aurelia circle</h2>
                 <p>Share a few details so we can make your introduction count.</p>
-                <label for="reg-name">Full name</label><input id="reg-name" name="name" type="text" autocomplete="name" required>
-                <label for="reg-email">Email address</label><input id="reg-email" name="email" type="email" autocomplete="email" required>
-                <label for="reg-phone">Phone number <span class="optional">(optional)</span></label><input id="reg-phone" name="phone" type="tel" autocomplete="tel">
-                <label for="reg-interest">I am interested in</label><select id="reg-interest" name="interest"><option value="">Select an option</option><option>Exploring the collection</option><option>Finding a specific vehicle</option><option>Booking a private viewing</option><option>Learning about your services</option></select>
-                <label for="reg-notes">Anything else we should know? <span class="optional">(optional)</span></label><textarea id="reg-notes" name="notes" rows="3"></textarea>
-                <label class="checkbox-label" for="reg-updates"><input id="reg-updates" name="updates" type="checkbox"><span>I would like to hear about new arrivals and Aurelia news.</span></label>
-                <button class="button button-dark" type="submit">Register your interest <span aria-hidden="true">→</span></button>
-                <p class="form-note">This demo form is for layout purposes and is not connected to a submission service.</p>
+
+                <fieldset>
+                    <legend>Your information</legend>
+
+                    <label for="reg-name">Full name</label>
+                    <input id="reg-name" name="name" type="text"
+                           autocomplete="name" required minlength="2" maxlength="50">
+
+                    <label for="reg-email">Email address</label>
+                    <input id="reg-email" name="email" type="email"
+                           autocomplete="email" required>
+
+                    <label for="reg-phone">Phone number</label>
+                    <input id="reg-phone" name="phone" type="tel"
+                           autocomplete="tel" pattern="[0-9]{10}"
+                           placeholder="1234567890"
+                           title="Enter a 10-digit phone number">
+
+                    <label for="reg-interest">I am interested in</label>
+                    <select id="reg-interest" name="interest" required>
+                        <option value="">Select an option</option>
+                        <option>Exploring the collection</option>
+                        <option>Finding a specific vehicle</option>
+                        <option>Booking a private viewing</option>
+                        <option>Learning about your services</option>
+                    </select>
+
+                    <label for="reg-car">Preferred vehicle type</label>
+                    <input id="reg-car" name="vehicle" type="text"
+                           list="vehicle-types" placeholder="Choose or enter a vehicle type">
+
+                    <datalist id="vehicle-types">
+                        <option value="Sedan">
+                        <option value="SUV">
+                        <option value="Sports car">
+                        <option value="Coupe">
+                        <option value="Electric vehicle">
+                    </datalist>
+
+                    <label for="reg-budget">Estimated budget ($)</label>
+                    <input id="reg-budget" name="budget" type="number"
+                           min="10000" max="500000" step="1000"
+                           placeholder="50000">
+
+                    <label for="reg-date">Preferred viewing date</label>
+                    <input id="reg-date" name="viewing-date" type="date"
+                           min="2026-11-16">
+
+                    <label for="reg-notes">Anything else we should know?</label>
+                    <textarea id="reg-notes" name="notes" rows="3"
+                              maxlength="500"
+                              placeholder="Tell us about the vehicle you are looking for..."></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferred contact method</legend>
+
+                    <label>
+                        <input type="radio" name="contact-method" value="email" required>
+                        Email
+                    </label>
+
+                    <label>
+                        <input type="radio" name="contact-method" value="phone">
+                        Phone
+                    </label>
+                </fieldset>
+
+                <label class="checkbox-label" for="reg-updates">
+                    <input id="reg-updates" name="updates" type="checkbox">
+                    <span>I would like to hear about new arrivals and Aurelia news.</span>
+                </label>
+
+                <button class="button button-dark" type="submit">
+                    Register your interest <span aria-hidden="true">→</span>
+                </button>
+
+                <button class="button button-dark" type="reset">
+                    Reset form
+                </button>
+
+                <p class="form-note">
+                    This demo form uses browser validation and is not connected to a submission service.
+                </p>
+
             </form>
         </section>
     </main>
-    <footer class="site-footer"><a class="footer-brand" href="index.html">Aurelia Motor Co.</a><p>Exceptional automobiles. A more personal experience.</p><span>© 2026 Aurelia Motor Co.</span></footer>
+
+    <footer class="site-footer">
+        <a class="footer-brand" href="index.html">Aurelia Motor Co.</a>
+        <p>Exceptional automobiles. A more personal experience.</p>
+        <span>© 2026 Aurelia Motor Co.</span>
+    </footer>
 </body>
 </html>
+```
